@@ -1,0 +1,30 @@
+<script type="text/javascript">
+    function cal(){
+        let a = parseInt(prompt("Enter number of A:-"));
+        let b = parseInt(prompt("Enter number of B:-"));
+        let c = prompt("Enter a ( + , - , * , / ):- ");
+
+        console.log("A:- " +a);
+        console.log("B:- " +b);
+        console.log("You choose " +c);
+
+        switch (c) {
+            case '+':
+                console.log("A + B = " +(a+b));
+                break;
+            case '-':
+                console.log("A - B = " +(a-b));
+                break;
+            case '*':
+                console.log("A * B = " +(a*b));
+                break;
+            case '/':
+                console.log("A / B = " +(a/b));
+                break;
+            default:
+                console.log("In vaild choice");
+                break;
+        }
+    }
+    cal();
+</script>

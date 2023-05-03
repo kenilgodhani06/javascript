@@ -1,0 +1,71 @@
+<script type="text/javascript">
+    
+    // simple function  
+    // function triangle(){
+    //     let angle1 = parseInt(prompt("Enter the first angle: "));
+    //     let angle2 = parseInt(prompt("Enter the second angle: "));
+    //     let angle3 = parseInt(prompt("Enter the third angle: "));
+
+    //     let sumOfAngles = angle1 + angle2 + angle3;
+    //     if(sumOfAngles === 180 && angle1 > 0 && angle2 > 0 && angle3 > 0) {
+    //       console.log("The angles form a valid triangle");
+    //     } else {
+    //       console.log("The angles do not form a valid triangle");
+    //     }
+    // }
+    // triangle();
+
+
+    // no return with perameter
+    // let angle1 = parseInt(prompt("Enter the first angle: "));
+    // let angle2 = parseInt(prompt("Enter the second angle: "));
+    // let angle3 = parseInt(prompt("Enter the third angle: "));
+    // triangle(angle1,angle2,angle3);
+
+    // function triangle(angle1,angle2,angle3){
+    //     let sumOfAngles = angle1 + angle2 + angle3;
+    //     if(sumOfAngles === 180 && angle1 > 0 && angle2 > 0 && angle3 > 0) {
+    //       console.log("The angles form a valid triangle");
+    //     } else {
+    //       console.log("The angles do not form a valid triangle");
+    //     }
+    // }
+
+
+    // return no perameter
+    // function triangle(){
+    //     let angle1 = parseInt(prompt("Enter the first angle: "));
+    //     let angle2 = parseInt(prompt("Enter the second angle: "));
+    //     let angle3 = parseInt(prompt("Enter the third angle: "));
+
+    //     let sumOfAngles = angle1 + angle2 + angle3;
+    //     if(sumOfAngles === 180 && angle1 > 0 && angle2 > 0 && angle3 > 0) {
+    //         return 1;
+    //     }
+    // }
+
+    // if(triangle()==1){
+    //     console.log("The angles form a valid triangle");
+    // }else{
+    //     console.log("The angles do not form a valid triangle");
+    // }
+
+
+    //  return with perameter
+    let angle1 = parseInt(prompt("Enter the first angle: "));
+    let angle2 = parseInt(prompt("Enter the second angle: "));
+    let angle3 = parseInt(prompt("Enter the third angle: "));
+
+    if(triangle(angle1,angle2,angle3)==1){
+        console.log("The angles form a valid triangle");
+    }else{
+        console.log("The angles do not form a valid triangle");
+    }
+    
+    function triangle(angle1,angle2,angle3){
+        let sumOfAngles = angle1 + angle2 + angle3;
+        if(sumOfAngles === 180 && angle1 > 0 && angle2 > 0 && angle3 > 0) {
+            return 1;
+        }
+    }
+</script>
