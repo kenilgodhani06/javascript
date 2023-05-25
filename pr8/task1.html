@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Glassmorphism login Form</title>
+
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;600&display=swap" rel="stylesheet">
+    <style media="screen">
+        *,
+        *:before,
+        *:after {
+            padding: 0;
+            margin: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background-color: #1845ad;
+        }
+
+        .background {
+            width: 430px;
+            height: 520px;
+            position: absolute;
+            transform: translate(-50%, -50%);
+            left: 50%;
+            top: 50%;
+        }
+
+        .background .shape {
+            height: 200px;
+            width: 200px;
+            position: absolute;
+            border-radius: 50%;
+        }
+
+        .shape:first-child {
+            background: linear-gradient(#1845ad,
+                    #23a2f6);
+            left: -120px;
+            top: -200px;
+        }
+
+        .shape:last-child {
+            background: linear-gradient(to right,
+                    #ff512f,
+                    #f09819);
+            right: -80px;
+            bottom: -200px;
+        }
+
+        form {
+            height: 800px;
+            width: 500px;
+            background-color: rgba(255, 255, 255, 0.13);
+            position: absolute;
+            transform: translate(-50%, -50%);
+            top: 50%;
+            left: 50%;
+            border-radius: 10px;
+            backdrop-filter: blur(10px);
+            border: 2px solid rgba(255, 255, 255, 0.1);
+            box-shadow: 0 0 40px rgba(8, 7, 16, 0.6);
+            padding: 50px 35px;
+        }
+
+        form * {
+            font-family: 'Poppins', sans-serif;
+            color: #ffffff;
+            letter-spacing: 0.5px;
+            outline: none;
+            border: none;
+        }
+
+        form h3 {
+            font-size: 32px;
+            font-weight: 500;
+            line-height: 42px;
+            text-align: center;
+        }
+
+        label {
+            display: block;
+            margin-top: 30px;
+            font-size: 16px;
+            font-weight: 500;
+        }
+
+        input {
+            display: block;
+            height: 50px;
+            width: 100%;
+            background-color: rgba(255, 255, 255, 0.07);
+            border-radius: 3px;
+            padding: 0 10px;
+            margin-top: 8px;
+            font-size: 14px;
+            font-weight: 300;
+        }
+
+        ::placeholder {
+            color: #e5e5e5;
+        }
+
+        button {
+            margin-top: 50px;
+            width: 100%;
+            background-color: #ffffff;
+            color: #080710;
+            padding: 15px 0;
+            font-size: 18px;
+            font-weight: 600;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        .social {
+            margin-top: 30px;
+            display: flex;
+        }
+
+        .social div {
+            background: red;
+            width: 200px;
+            border-radius: 3px;
+            padding: 5px 10px 10px 5px;
+            background-color: rgba(255, 255, 255, 0.27);
+            color: #eaf0fb;
+            text-align: center;
+        }
+
+        .social div:hover {
+            background-color: rgba(255, 255, 255, 0.47);
+        }
+
+        .social .fb {
+            margin-left: 25px;
+        }
+
+        .social i {
+            margin-right: 4px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="background">
+        <div class="shape"></div>
+        <div class="shape"></div>
+    </div>
+    <form>
+        <h3>Register Here</h3>
+
+        <label for="name">Username</label>
+        <input type="text" placeholder="Username" id="name">
+
+        <label for="email">email</label>
+        <input type="email" placeholder="example@gmail.com" id="email">
+
+        <label for="password">Password</label>
+        <input type="password" placeholder="Password" id="password">
+
+        <label for="cpassword">Confirm Password</label>
+        <input type="cpassword" placeholder="cpassword" id="cpassword">
+
+
+        <button onclick="save()">Submit</button>
+        <div class="social">
+            <div class="go"><i class="fab fa-google"></i> Google</div>
+            <div class="fb"><i class="fab fa-facebook"></i> Facebook</div>
+        </div>
+    </form>
+</body>
+
+</html>
+<script type="text/javascript">
+    const save = () => {
+        let name = document.getElementById('name').value;
+        let email = document.getElementById('email').value;
+        let password = document.getElementById('password').value;
+        let cpassword = document.getElementById('cpassword').value;
+        let validFirstName = /^[A-Za-z]+$/;
+        let mailformat = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
+        let pass = /^[A-Za-z]\w{7,14}$/;
+
+        try {
+            if (!name) {
+                throw 'Enter Your Name.'
+                return false;
+            }
+            if (!name.match(validFirstName)) {
+                throw 'Enter a valid name.'
+                return false;
+            }
+            if (!email) {
+                throw 'Enater Your email.'
+                return false;
+            }
+            if (!email.match(mailformat)) {
+                throw 'Enter a valid email.'
+                return false;
+            }
+            if (!password) {
+                throw 'Enter Your password.'
+                return false;
+            }
+            if (!password.match(pass)) {
+                throw 'Enter a valid password.'
+                return false;
+            }
+            if (cpassword != password) {
+                throw 'Enter a same password.'
+                return false;
+            }
+            if (cpassword == password) {
+                throw "your Form is subbmited";
+                empty();
+            }
+        } catch (e) {
+            alert(e);
+        }
+
+
+
+    }
+    const empty = () => {
+        document.getElementById('name').value = "";
+        document.getElementById('email').value = "";
+        document.getElementById('password').value = "";
+        document.getElementById('cpassword').value = "";
+    }
+</script>
